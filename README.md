@@ -5,6 +5,12 @@ An interactive, web-based data dashboard built entirely in **R** to analyze and 
 🔗 **[Click here to view the live dashboard on RPubs!](https://rpubs.com/usmanali9999/1442639)**
 
 ---
+---
+
+## 🖥️ Dashboard Preview
+![Dashboard Preview](image_V3JVxx.png)
+
+---
 
 ## 📌 Project Overview
 This project transforms raw financial data into a decision-making tool. Using an R Markdown workflow with `flexdashboard`, it presents a multi-component view of operational costs to identify funding priorities, macro budget trajectories, and granular department growth.
