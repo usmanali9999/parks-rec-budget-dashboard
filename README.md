@@ -8,7 +8,7 @@ An interactive, web-based data dashboard built entirely in **R** to analyze and 
 ---
 
 ## 🖥️ Dashboard Preview
-![Dashboard Preview](image_V3JVxx.png)
+![Dashboard Preview](dashboard_preview.png)
 
 ---
 
