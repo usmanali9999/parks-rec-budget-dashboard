@@ -1,0 +1,61 @@
+---
+title: "Final_Pesentation"
+author: "Usman Ali"
+date: "`r Sys.Date()`"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+# 1. Load the required libraries
+library(ggplot2)
+library(dplyr)
+
+# 2. Load your data (Make sure the path matches your computer)
+df <- read.csv("C:\\Users\\Adnan LapTop House\\Downloads\\parks_and_rec_budget.csv")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart 1: Total Budget by Department (Sorted)
+
+```{r}
+df %>%
+  group_by(Department) %>%
+  summarise(Total_Budget = sum(Budget_in_Thousands)) %>%
+  ggplot(aes(x = reorder(Department, -Total_Budget), y = Total_Budget, fill = Department)) +
+  geom_bar(stat = "identity") +
+  ggtitle("Total Budget by Department") +
+  theme(axis.text.x = element_text(angle = 45,, hjust = 1))
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart 2: Annual Budget Trend
+
+```{r}
+df %>%
+  group_by(Year) %>%
+  summarise(Annual_Budget = sum(Budget_in_Thousands)) %>%
+  ggplot(aes(x = Year, y = Annual_Budget)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(color = "darkblue", size = 2) +
+  ylab("Annual Budget") +
+  theme_minimal()
+```
+
+### Component 3: Data Overview Summary
+
+```{r}
+# This creates a simple summary table of your data
+  df %>%
+    ggplot(aes(x = Year, y = Budget_in_Thousands, color = Department)) +
+    geom_line(linewidth = 1.2) + # Makes the lines thicker and easier to see
+    ggtitle("Annual Budget per Department") +
+    theme_minimal()
+```
+
